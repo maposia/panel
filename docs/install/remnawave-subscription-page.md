@@ -100,7 +100,7 @@ MARZBAN_LEGACY_SECRET_KEY=
 REMNAWAVE_API_TOKEN=
 
 
-# If you use "Caddy with security" addon, you can place here X-Api-Key, which will be applied to requests to Remnawave Panel.
+# If you use "Caddy with security" addon or TinyAuth for Nginx, you can place here X-Api-Key, which will be applied to requests to Remnawave Panel.
 CADDY_AUTH_API_TOKEN=
 ```
 
