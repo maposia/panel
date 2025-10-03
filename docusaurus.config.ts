@@ -18,14 +18,28 @@ const config: Config = {
         defaultLocale: 'en',
         locales: ['en']
     },
+    markdown: {
+        mermaid: true
+    },
+    themes: ['@docusaurus/theme-mermaid'],
+
+    headTags: [
+        {
+            tagName: 'meta',
+            attributes: {
+                name: 'theme-color',
+                content: '#242c38'
+            }
+        }
+    ],
 
     presets: [
         [
             'classic',
             {
                 docs: {
-                    showLastUpdateAuthor: true,
-                    showLastUpdateTime: true,
+                    showLastUpdateAuthor: false,
+                    showLastUpdateTime: false,
                     sidebarPath: './sidebars.ts',
                     editUrl: 'https://github.com/remnawave/panel/tree/main'
                 },
@@ -66,9 +80,9 @@ const config: Config = {
                 name: 'docusaurus-mantineui',
                 configurePostCss(postcssOptions) {
                     // Appends TailwindCSS and AutoPrefixer.
-                    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
+                    // eslint-disable-next-line @typescript-eslint/no-require-imports, global-require
                     postcssOptions.plugins.push(require('postcss-preset-mantine'))
-                    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
+                    // eslint-disable-next-line @typescript-eslint/no-require-imports, global-require
                     postcssOptions.plugins.push(require('postcss-simple-vars'))
                     return postcssOptions
                 }
@@ -106,6 +120,8 @@ const config: Config = {
                     },
                     theme: 'purple',
                     hideDarkModeToggle: true,
+                    orderSchemaPropertiesBy: 'preserve',
+                    orderRequiredPropertiesFirst: true,
                     searchHotKey: 'k',
                     metaData: {
                         title: 'Remnawave API Specification',

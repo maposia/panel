@@ -159,14 +159,18 @@ JWT_API_TOKENS_SECRET=strong_secret_key
 
 `TELEGRAM_NOTIFY_NODES_CHAT_ID`, `TELEGRAM_NOTIFY_NODES_THREAD_ID` is used to send notifications about node events.
 
+`TELEGRAM_NOTIFY_CRM_CHAT_ID`, `TELEGRAM_NOTIFY_CRM_THREAD_ID` is used to send notifications about CRM events.
+
 | Variable                            | Description                           | Default | Possible values |
 | ----------------------------------- | ------------------------------------- | ------- | --------------- |
 | `IS_TELEGRAM_NOTIFICATIONS_ENABLED` | Disable/Enable Telegram notifications | `false` | `true`, `false` |
 | `TELEGRAM_BOT_TOKEN`                | The token for the Telegram bot        |         |                 |
 | `TELEGRAM_NOTIFY_USERS_CHAT_ID`     | The user/group chat id                |         |                 |
 | `TELEGRAM_NOTIFY_NODES_CHAT_ID`     | The user/group chat id                |         |                 |
+| `TELEGRAM_NOTIFY_CRM_CHAT_ID`       | The user/group chat id                |         |                 |
 | `TELEGRAM_NOTIFY_USERS_THREAD_ID`   | The topic id of Telegram group        |         |                 |
 | `TELEGRAM_NOTIFY_NODES_THREAD_ID`   | The topic id of Telegram group        |         |                 |
+| `TELEGRAM_NOTIFY_CRM_THREAD_ID`     | The topic id of Telegram group        |         |                 |
 
 :::note
 
@@ -190,9 +194,13 @@ TELEGRAM_NOTIFY_USERS_CHAT_ID=change_me
 # Notifications about nodes
 TELEGRAM_NOTIFY_NODES_CHAT_ID=change_me
 
+# Notifications about CRM
+TELEGRAM_NOTIFY_CRM_CHAT_ID=change_me
+
 # Optional, if you want to send notifications to specific topics in Telegram group
 TELEGRAM_NOTIFY_USERS_THREAD_ID=
 TELEGRAM_NOTIFY_NODES_THREAD_ID=
+TELEGRAM_NOTIFY_CRM_THREAD_ID=
 ```
 
 </details>
@@ -383,12 +391,20 @@ HWID_MAX_DEVICES_ANNOUNCE="Max devices reached"
 
 </details>
 
+## Branding
+
+| Variable            | Description                        | Default |
+| ------------------- | ---------------------------------- | ------- |
+| `BRANDING_TITLE`    | The name of the brand              |         |
+| `BRANDING_LOGO_URL` | The https:// URL of the brand logo |         |
+
 ## Miscellaneous
 
 | Variable                  | Description                                                                              | Default |
 | ------------------------- | ---------------------------------------------------------------------------------------- | ------- |
 | `SHORT_UUID_LENGTH`       | The length of the generated short UUID (subscription). Min. lenght 16 and max. lenght 64 | `16`    |
 | `IS_HTTP_LOGGING_ENABLED` | Enable/Disable HTTP logging                                                              | `false` |
+| `JWT_AUTH_LIFETIME`       | The lifetime of the auth JWT in hours. Possible values from 12 to 168.                   | `12`    |
 
 <details>
 <summary>Example</summary>
@@ -396,7 +412,7 @@ HWID_MAX_DEVICES_ANNOUNCE="Max devices reached"
 ```bash title=".env file"
 SHORT_UUID_LENGTH=16
 IS_HTTP_LOGGING_ENABLED=true
+JWT_AUTH_LIFETIME=12
 ```
 
 </details>
-````
